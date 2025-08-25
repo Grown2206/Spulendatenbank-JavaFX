@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:controller="gui.DataViewController" alignment="CENTER" spacing="10" styleClass="root-vbox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+
+    <Label styleClass="h1" text="Gespeicherte Datensätze" />
+
+    <!-- NEU: Suchleiste -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="Suchen:" />
+        <TextField fx:id="searchField" promptText="Artikelnummer, Zeichnungsnummer oder Typ eingeben..." HBox.hgrow="ALWAYS" />
+    </HBox>
+
+    <StackPane VBox.vgrow="ALWAYS">
+        <TableView fx:id="dataTable">
+            <columns>
+                <TableColumn fx:id="idCol" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="lfdNrCol" prefWidth="75.0" text="Lfd. Nr." />
+                <TableColumn fx:id="typCol" prefWidth="100.0" text="Typ" />
+                <TableColumn fx:id="artikelNrCol" prefWidth="150.0" text="Artikelnummer" />
+                <TableColumn fx:id="zeichnungsNrCol" prefWidth="150.0" text="Zeichnungsnr." />
+                <TableColumn fx:id="materialCol" prefWidth="250.0" text="Materialbezeichnung" />
+                <TableColumn fx:id="dbCol" prefWidth="100.0" text="DB [mm]" />
+                <TableColumn fx:id="dhCol" prefWidth="100.0" text="DH [mm]" />
+            </columns>
+        </TableView>
+        <ProgressIndicator fx:id="loadingIndicator" visible="false" />
+    </StackPane>
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="Doppelklick auf eine Zeile zum Bearbeiten." style="-fx-font-style: italic;" />
+        <HBox HBox.hgrow="ALWAYS" alignment="CENTER_RIGHT" spacing="10">
+            <Button onAction="#handleImport" text="Importieren..." />
+            <Button onAction="#handleExport" text="Exportieren..." />
+            <Button onAction="#handleDelete" text="Löschen" styleClass="button-cancel" />
+            <Button onAction="#handleCreateReport" text="Bericht erstellen..." />
+        </HBox>
+    </HBox>
+</VBox>

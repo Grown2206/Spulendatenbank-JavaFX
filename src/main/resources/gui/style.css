@@ -1,0 +1,77 @@
+/* Allgemeines Styling für das Hauptfenster (root) */
+.root {
+    -fx-background-color: #3c3c3c; /* Dunkler Hintergrund für den ScrollPane-Bereich */
+}
+
+/* Styling für den VBox-Container innerhalb des ScrollPanes */
+.root-vbox {
+    -fx-background-color: #EAEAEA; /* Hellerer Hintergrund für den Hauptinhalt */
+    -fx-font-size: 14px;
+}
+
+/* Styling für alle Labels */
+.label {
+    -fx-text-fill: #1E1E1E; /* Dunkle Textfarbe auf hellem Hintergrund */
+    -fx-font-weight: bold;
+}
+
+/* Basis-Styling für Eingabefelder und ComboBoxen im Dark-Mode-Stil */
+.text-field, .combo-box, .text-area {
+    -fx-background-color: #555555;
+    -fx-text-fill: #F0F0F0;
+    -fx-border-color: #777777;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-prompt-text-fill: #AAAAAA;
+}
+
+.text-area .content {
+    -fx-background-color: #555555;
+}
+
+/* Styling, wenn ein Feld den Fokus hat */
+.text-field:focused, .combo-box:focused, .text-area:focused {
+    -fx-border-color: #0096C9;
+    -fx-background-color: #606060;
+}
+
+/* Styling für die Dropdown-Liste der ComboBox */
+.combo-box .list-cell {
+    -fx-background-color: #555555;
+    -fx-text-fill: #F0F0F0;
+}
+.combo-box .list-cell:hover {
+    -fx-background-color: #6A6A6A;
+}
+
+/* TitledPane Styling */
+.titled-pane {
+    -fx-text-fill: #1E1E1E; /* Textfarbe des Inhalts */
+}
+
+.titled-pane > .title {
+    -fx-background-color: #D0D0D0; /* Heller Header-Hintergrund */
+    -fx-background-radius: 4 4 0 0;
+}
+
+.titled-pane > .title > .text {
+    -fx-fill: #1E1E1E;
+    -fx-font-weight: bold;
+}
+
+.titled-pane > .content {
+    -fx-background-color: #F0F0F0; /* Hellerer Inhaltsbereich */
+    -fx-border-color: #D0D0D0;
+    -fx-border-width: 0 1 1 1;
+    -fx-border-radius: 0 0 4 4;
+}
+
+/* Rahmen für die Bild-Anzeige */
+.image-view-border {
+    -fx-border-color: #AAAAAA;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 4px;
+}

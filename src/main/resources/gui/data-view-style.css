@@ -1,0 +1,37 @@
+.root-vbox {
+    -fx-background-color: #EAEAEA;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.h1 {
+    -fx-font-size: 24px;
+    -fx-text-fill: #1E1E1E;
+    -fx-font-weight: bold;
+}
+
+.table-view {
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 4px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #D0D0D0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent #CCCCCC transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+/* KORREKTUR: Dies ist ein spezifischerer und robusterer Weg, die Textfarbe zu setzen. */
+.table-row-cell {
+    -fx-text-fill: #1E1E1E; /* Stellt sicher, dass der Text dunkel ist */
+    -fx-padding: 0.2em;
+}
+
+/* Verbessert die Lesbarkeit, wenn eine Zeile ausgewählt wird */
+.table-row-cell:selected {
+    -fx-background-color: #0096C9; /* Blauer Hintergrund für Auswahl */
+    -fx-text-fill: white; /* Weißer Text auf blauem Hintergrund */
+}

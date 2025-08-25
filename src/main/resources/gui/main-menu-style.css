@@ -1,0 +1,103 @@
+.root-vbox {
+    -fx-background-color: #212121;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.h1 {
+    -fx-font-size: 24px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+.main-menu-button {
+    -fx-pref-width: 220px;
+    -fx-pref-height: 130px;
+    -fx-content-display: TOP;
+    -fx-font-size: 16px;
+    -fx-text-alignment: CENTER;
+    -fx-text-wrap: true;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #212121;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 28px;
+    -fx-background-radius: 28px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.2, 0, 2);
+    -fx-cursor: hand;
+}
+
+.main-menu-button:hover {
+    -fx-background-color: #212121;
+    -fx-border-color: #00C7FF;
+}
+
+.main-menu-icon {
+    -fx-font-size: 48px;
+    -fx-fill: #0096C9;
+}
+
+/* NEU: Statistik-Styling */
+.stats-box {
+    -fx-border-color: #555555;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 15 0 0 0;
+}
+
+.stats-title {
+    -fx-font-size: 16px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+.stats-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #AAAAAA;
+}
+
+.stats-value {
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+/* NEU: To-Do-Styling */
+.todo-box {
+    -fx-background-color: #2a2a2a;
+    -fx-padding: 15px;
+    -fx-background-radius: 8px;
+    -fx-border-color: #444444;
+    -fx-border-width: 1px;
+}
+
+.todo-list-view {
+    -fx-background-color: #3c3c3c;
+    -fx-border-color: #555555;
+}
+
+.todo-list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 8px;
+    -fx-font-size: 13px;
+}
+
+.todo-list-view .list-cell:filled:hover {
+    -fx-background-color: #4f4f4f;
+}
+
+.todo-list-view .check-box .box {
+    -fx-background-color: #555555;
+    -fx-border-color: #888888;
+}
+
+.todo-list-view .check-box:selected .box {
+    -fx-background-color: #0096C9;
+}
+
+.todo-list-view .check-box .text {
+    -fx-fill: #FFFFFF; /* Standard-Textfarbe für CheckBox */
+}
+
+.todo-list-view .check-box:selected .text {
+    -fx-strikethrough: true;
+    -fx-fill: #999999; /* Farbe für erledigte Aufgaben */
+}

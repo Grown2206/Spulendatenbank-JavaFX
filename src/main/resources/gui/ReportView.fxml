@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="reportRoot" styleClass="report-root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ReportViewController">
+    <padding>
+        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+    </padding>
+
+    <GridPane fx:id="headerGrid" styleClass="header-grid">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <Label text="Typ" />
+        <Label text="Artikelnummer Spule" GridPane.columnIndex="1" />
+        <Label text="Zeichnungsnummer" GridPane.columnIndex="2" />
+        <Label text="Materialbezeichnung" GridPane.columnIndex="3" />
+        <Label text="Artikelnummer Schacht" GridPane.columnIndex="4" />
+        <Label text="Lfd. Nr." GridPane.columnIndex="5" />
+    </GridPane>
+
+    <GridPane fx:id="headerDataGrid" styleClass="header-data-grid" />
+
+    <HBox alignment="TOP_CENTER" spacing="20" VBox.vgrow="ALWAYS">
+        <VBox fx:id="empfaengerBox" alignment="TOP_CENTER" HBox.hgrow="ALWAYS">
+            <Label styleClass="h2" text="Empfängerwicklung" />
+            <StackPane VBox.vgrow="ALWAYS">
+                <ImageView fx:id="empfaengerSkizzeImageView" fitHeight="600.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true" />
+                <Pane fx:id="empfaengerZeichenPane" pickOnBounds="false" />
+            </StackPane>
+            <VBox fx:id="empfaengerWerteBox" />
+        </VBox>
+        <VBox fx:id="senderBox" alignment="TOP_CENTER" HBox.hgrow="ALWAYS">
+            <Label styleClass="h2" text="Senderwicklung" />
+            <StackPane VBox.vgrow="ALWAYS">
+                <ImageView fx:id="senderSkizzeImageView" fitHeight="600.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true" />
+                <Pane fx:id="senderZeichenPane" pickOnBounds="false" />
+            </StackPane>
+            <VBox fx:id="senderWerteBox" />
+        </VBox>
+    </HBox>
+
+    <Label text="*Alle Angaben in mm" style="-fx-font-style: italic;" />
+    <Label text="Bemerkung:" />
+    <TextArea fx:id="bemerkungArea" editable="false" prefRowCount="3" />
+
+    <HBox alignment="CENTER_RIGHT" prefHeight="40.0" spacing="10.0">
+        <padding>
+            <Insets top="10.0" />
+        </padding>
+        <Button onAction="#handleExportReport" text="Bericht speichern..." />
+    </HBox>
+</VBox>

@@ -1,0 +1,28 @@
+.report-root {
+    -fx-background-color: white;
+}
+
+.header-grid {
+    -fx-background-color: #E2FF7B; /* Hellgrün */
+    -fx-padding: 5px;
+    -fx-font-weight: bold;
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 0 0 1 0;
+}
+
+.header-data-grid {
+    -fx-background-color: #F0F0F0; /* Grau */
+    -fx-padding: 5px;
+    -fx-font-weight: bold;
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 0 0 1 0;
+}
+
+.h2 {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-color: #E2FF7B;
+    -fx-padding: 3px 8px;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+}

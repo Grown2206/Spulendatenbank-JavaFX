@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" styleClass="root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainViewController">
+    <content>
+        <VBox alignment="TOP_CENTER" spacing="20" styleClass="root-vbox">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+
+            <Label styleClass="h1" text="Neuen Datensatz anlegen" />
+
+            <!-- Grid für die allgemeinen Daten oben -->
+            <GridPane hgap="20" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                </columnConstraints>
+
+                <Label text="Lfd Nr:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="lfdNrField" editable="false" promptText="wird automatisch befüllt" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Typ:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <ComboBox fx:id="typComboBox" prefWidth="200.0" promptText="Typ auswählen" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Materialbezeichnung:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="materialbezeichnungField" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                <Label text="Artikelnummer Spule:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="artikelnummerSpuleField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Zeichnungsnummer:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="zeichnungsnummerField" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                <Label text="Durchlassbreite (DB):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <fx:include fx:id="dbField" source="control/NumericInputView.fxml" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Durchlasshöhe (DH):" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <fx:include fx:id="dhField" source="control/NumericInputView.fxml" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+                <Label text="Spulenlänge:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <fx:include fx:id="spulenlaengeField" source="control/NumericInputView.fxml" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="Artikelnummer Schacht:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <TextField fx:id="artikelnummerSchachtField" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            </GridPane>
+
+            <!-- Container für die beiden Wicklungen -->
+            <HBox spacing="20" VBox.vgrow="ALWAYS">
+                <!-- Empfängerwicklung -->
+                <TitledPane fx:id="empfaengerTitledPane" collapsible="false" text="Empfängerwicklung" HBox.hgrow="ALWAYS">
+                    <content>
+                        <GridPane hgap="10" vgap="5">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" />
+                                <ColumnConstraints hgrow="ALWAYS" />
+                            </columnConstraints>
+                            <Label text="Länge [mm]" GridPane.columnIndex="0" />
+                            <Label text="Winkel [°]" GridPane.columnIndex="1" />
+
+                            <fx:include fx:id="el1" source="control/NumericInputView.fxml" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                            <fx:include fx:id="ew1" source="control/NumericInputView.fxml" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                            <fx:include fx:id="el2" source="control/NumericInputView.fxml" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                            <fx:include fx:id="ew2" source="control/NumericInputView.fxml" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                            <fx:include fx:id="el3" source="control/NumericInputView.fxml" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                            <fx:include fx:id="ew3" source="control/NumericInputView.fxml" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                            <fx:include fx:id="el4" source="control/NumericInputView.fxml" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                            <fx:include fx:id="ew4" source="control/NumericInputView.fxml" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                            <fx:include fx:id="el5" source="control/NumericInputView.fxml" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+                            <fx:include fx:id="ew5" source="control/NumericInputView.fxml" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+                            <fx:include fx:id="el6" source="control/NumericInputView.fxml" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+                            <fx:include fx:id="ew6" source="control/NumericInputView.fxml" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+                            <fx:include fx:id="el7" source="control/NumericInputView.fxml" GridPane.rowIndex="7" GridPane.columnIndex="0" />
+                            <fx:include fx:id="ew7" source="control/NumericInputView.fxml" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+
+                            <Label text="Gesamtlänge:" GridPane.rowIndex="8" />
+                            <fx:include fx:id="gesamtlaengeEmpfaenger" source="control/NumericInputView.fxml" GridPane.rowIndex="8" GridPane.columnIndex="1" />
+
+                            <Label text="Skizze:" GridPane.rowIndex="9" />
+                            <VBox spacing="5" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="9">
+                                <ImageView fx:id="empfaengerSkizzeImageView" fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="image-view-border" />
+                                <Button onAction="#handleEmpfaengerSkizzeLaden" text="Skizze laden..." />
+                            </VBox>
+                        </GridPane>
+                    </content>
+                </TitledPane>
+
+                <!-- Senderwicklung -->
+                <TitledPane collapsible="false" text="Senderwicklung" HBox.hgrow="ALWAYS">
+                    <content>
+                        <GridPane hgap="10" vgap="5">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" />
+                                <ColumnConstraints hgrow="ALWAYS" />
+                            </columnConstraints>
+                            <Label text="Länge [mm]" GridPane.columnIndex="0" />
+                            <Label text="Winkel [°]" GridPane.columnIndex="1" />
+
+                            <fx:include fx:id="sl1" source="control/NumericInputView.fxml" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                            <fx:include fx:id="sw1" source="control/NumericInputView.fxml" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                            <fx:include fx:id="sl2" source="control/NumericInputView.fxml" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                            <fx:include fx:id="sw2" source="control/NumericInputView.fxml" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                            <fx:include fx:id="sl3" source="control/NumericInputView.fxml" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                            <fx:include fx:id="sw3" source="control/NumericInputView.fxml" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                            <fx:include fx:id="sl4" source="control/NumericInputView.fxml" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                            <fx:include fx:id="sw4" source="control/NumericInputView.fxml" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                            <fx:include fx:id="sl5" source="control/NumericInputView.fxml" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+                            <fx:include fx:id="sw5" source="control/NumericInputView.fxml" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+                            <fx:include fx:id="sl6" source="control/NumericInputView.fxml" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+                            <fx:include fx:id="sw6" source="control/NumericInputView.fxml" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+                            <fx:include fx:id="sl7" source="control/NumericInputView.fxml" GridPane.rowIndex="7" GridPane.columnIndex="0" />
+                            <fx:include fx:id="sw7" source="control/NumericInputView.fxml" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+                            <fx:include fx:id="sl8" source="control/NumericInputView.fxml" GridPane.rowIndex="8" GridPane.columnIndex="0" />
+                            <fx:include fx:id="sw8" source="control/NumericInputView.fxml" GridPane.rowIndex="8" GridPane.columnIndex="1" />
+                            <fx:include fx:id="sl9" source="control/NumericInputView.fxml" GridPane.rowIndex="9" GridPane.columnIndex="0" />
+                            <fx:include fx:id="sw9" source="control/NumericInputView.fxml" GridPane.rowIndex="9" GridPane.columnIndex="1" />
+
+                            <Label text="Gesamtlänge:" GridPane.rowIndex="10" />
+                            <fx:include fx:id="gesamtlaengeSender" source="control/NumericInputView.fxml" GridPane.rowIndex="10" GridPane.columnIndex="1" />
+
+                            <Label text="Skizze:" GridPane.rowIndex="11" />
+                            <VBox spacing="5" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="11">
+                                <ImageView fx:id="senderSkizzeImageView" fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="image-view-border" />
+                                <Button onAction="#handleSenderSkizzeLaden" text="Skizze laden..." />
+                            </VBox>
+                        </GridPane>
+                    </content>
+                </TitledPane>
+            </HBox>
+
+            <VBox>
+                <Label text="Bemerkung:" />
+                <TextArea fx:id="bemerkungArea" prefRowCount="5" wrapText="true" />
+            </VBox>
+
+            <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                <VBox.margin>
+                    <Insets top="20.0" />
+                </VBox.margin>
+                <Button onAction="#handleAbbrechen" styleClass="button-cancel" text="Abbrechen" />
+                <Button onAction="#handleSpeichern" styleClass="button-save" text="Datensatz speichern" />
+            </HBox>
+        </VBox>
+    </content>
+</ScrollPane>

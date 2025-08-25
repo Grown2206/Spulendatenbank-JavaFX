@@ -1,0 +1,40 @@
+/* Globale Schriftart und Basisfarben */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Allgemeines Styling für Überschriften H1 */
+.h1 {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E1E1E; /* Dunkler Text für helle Hintergründe */
+}
+
+/* Allgemeines Button-Styling */
+.button {
+    -fx-background-color: #5A5A5A;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 8 15 8 15;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: #6A6A6A;
+}
+
+/* Spezielles Styling für den Speichern-Button */
+.button-save {
+    -fx-background-color: #4CAF50; /* Grün */
+}
+.button-save:hover {
+    -fx-background-color: #5CBF60;
+}
+
+/* Spezielles Styling für den Abbrechen/Löschen-Button */
+.button-cancel {
+    -fx-background-color: #F44336; /* Rot */
+}
+.button-cancel:hover {
+    -fx-background-color: #F6645A;
+}

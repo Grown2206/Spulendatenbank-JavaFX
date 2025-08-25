@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<HBox spacing="20" styleClass="root-vbox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainMenuController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <VBox alignment="TOP_CENTER" spacing="20" HBox.hgrow="ALWAYS">
+        <Label styleClass="h1" text="Hauptmenü" />
+        <FlowPane alignment="CENTER" hgap="20" vgap="20">
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+            <Button onAction="#handleNewData" styleClass="main-menu-button" text="Neuen Datensatz anlegen">
+                <graphic>
+                    <FontIcon iconLiteral="fas-plus-circle" styleClass="main-menu-icon" />
+                </graphic>
+            </Button>
+            <Button onAction="#handleManageData" styleClass="main-menu-button" text="Datensatz verwalten">
+                <graphic>
+                    <FontIcon iconLiteral="fas-edit" styleClass="main-menu-icon" />
+                </graphic>
+            </Button>
+            <Button onAction="#handleShowData" styleClass="main-menu-button" text="Datensätze anzeigen">
+                <graphic>
+                    <FontIcon iconLiteral="fas-table" styleClass="main-menu-icon" />
+                </graphic>
+            </Button>
+            <Button onAction="#handleCreateReport" styleClass="main-menu-button" text="Bericht erstellen">
+                <graphic>
+                    <FontIcon iconLiteral="fas-chart-bar" styleClass="main-menu-icon" />
+                </graphic>
+            </Button>
+        </FlowPane>
+        <VBox alignment="CENTER_LEFT" styleClass="stats-box">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+            <Label text="Datenbank-Statistik" styleClass="stats-title" />
+            <GridPane hgap="20" vgap="5">
+                <padding>
+                    <Insets top="10.0" />
+                </padding>
+                <Label text="GLS:" styleClass="stats-label" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <Label fx:id="glsCountLabel" text="-" styleClass="stats-value" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                <Label text="GLS-MF:" styleClass="stats-label" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <Label fx:id="glsMfCountLabel" text="-" styleClass="stats-value" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                <Label text="Intuity:" styleClass="stats-label" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+                <Label fx:id="intuityCountLabel" text="-" styleClass="stats-value" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+                <Label text="MD-NG:" styleClass="stats-label" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+                <Label fx:id="mdNgCountLabel" text="-" styleClass="stats-value" GridPane.rowIndex="1" GridPane.columnIndex="3" />
+            </GridPane>
+        </VBox>
+    </VBox>
+
+    <VBox styleClass="todo-box" minWidth="300" spacing="10">
+        <Label text="Offene To-Dos" styleClass="stats-title" />
+        <ListView fx:id="todoListView" VBox.vgrow="ALWAYS" styleClass="todo-list-view" />
+        <HBox spacing="10">
+            <TextField fx:id="todoTextField" promptText="Neues To-Do..." HBox.hgrow="ALWAYS" />
+            <Button onAction="#handleAddTodo" text="Add" />
+        </HBox>
+        <Button onAction="#handleDeleteCompleted" text="Erledigte löschen" maxWidth="Infinity" />
+    </VBox>
+</HBox>
